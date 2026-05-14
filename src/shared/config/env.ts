@@ -18,14 +18,15 @@ const config = {
     host: process.env.PG_HOST || "localhost",
     port: parseInt(process.env.PG_PORT || "5432", 10),
     database: process.env.PG_USER || "postgres",
+    user: process.env.PG_USER || "postgres",
+    password: process.env.PG_PASSWORD || "postgres",
   },
 
   //rabbitMQ
   rabbitmq: {
-    url: process.env.RBBITMQ_URL || "ampq://localhost:5672",
+    url: process.env.RABBITMQ_URL || "amqp://localhost:5672",
     queue: process.env.RABBITMQ_QUEUE || "api_hits",
-    publisherConfirms:
-      process.env.RABBITMQ_PUBLISHER_CONFIRMS === "true" || "false",
+    publisherConfirms: process.env.RABBITMQ_PUBLISHER_CONFIRMS === "true",
     retryAttempts: parseInt(process.env.RABBITMQ_RETRY_ATTEMPTS || "3", 10),
     retryDelay: parseInt(process.env.RABBITMQ_RETRY_DELAY || "1000", 10),
   },

@@ -89,8 +89,8 @@ class RabbitMQConnection {
     if(!this.connection || !this.channel) {
         return "disconnected";
     }
-    if(this.connection.connection?.stream?.destroyed){
-        return "closing";
+  if((this.connection as any)?.connection.stream.destroyed){
+      return "closing";
     }
     return "connected"
   }
