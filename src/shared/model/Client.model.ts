@@ -83,6 +83,6 @@ const ClientSchema = new mongoose.Schema<ClientDocument>({
 
 ClientSchema.index({ isActive: 1 });
 
-const Client: Model<ClientDocument> =  .mongoose.model<ClientDocument>("Client", ClientSchema);
+const Client: Model<ClientDocument> = mongoose.model<ClientDocument>("Client", ClientSchema);
 
 export default Client;
