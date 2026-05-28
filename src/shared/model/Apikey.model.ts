@@ -182,9 +182,3 @@ apiKeySchema.methods.isExpired = function (): boolean {
 const ApiKey: Model<IApiKey>  = (mongoose.model<IApiKey>("ApiKey", apiKeySchema));
 
 export default ApiKey;
-
-
-
-
-
-
