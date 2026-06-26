@@ -28,5 +28,6 @@ BEGIN
     $$ LANGUAGE 'plpgsql';
 
     DROP TRIGGER IF EXISTS update_endpoint_metrics_updated_at ON endpoint_metrics;
-    CREATE TRIGGER update_endpoint_metrics_updated_at BEFORE UPDATE ON endpoint_metrics FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+    CREATE TRIGGER update_endpoint_metrics_updated_at BEFORE UPDATE ON endpoint_metrics FOR EACH ROW EXECUTE FUNCTION 
+    update_updated_at_column();
     
