@@ -3,7 +3,7 @@ import logger from '../config/logger';
 
 interface AppError extends Error {
     statusCode?: number;
-    status?: string;
+    status?: number;
     error?: any;
     code?: number;
     }
@@ -34,5 +34,9 @@ interface AppError extends Error {
             statusCode = 401;
             message = 'Token Expired';
         }
-        
+        res.status(statusCode)
+        .json(ResponseFormatter.error(message, statusCode, errors));
+    };
+
+export default errorHandler;
 
